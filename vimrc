@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -18,6 +19,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'L9'
 " Git plugin not hosted on GitHub
 "Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'Valloric/YouCompleteMe'
 " git repos on your local machine (i.e. when working on your own plugin)
 "Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
@@ -30,6 +32,7 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'https://github.com/kien/ctrlp.vim'
 Plugin 'klen/python-mode'
 Plugin 'joonty/vdebug'
+Plugin 'fatih/vim-go'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -109,3 +112,4 @@ set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
 let g:pymode_folding=0
 let g:pymode_breakpoint = 1
 let g:pymode_breakpoint_bind = '<leader>b'
+let g:pymode_indent = 1
