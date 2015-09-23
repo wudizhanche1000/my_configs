@@ -1,7 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -33,6 +32,7 @@ Plugin 'https://github.com/kien/ctrlp.vim'
 Plugin 'klen/python-mode'
 Plugin 'joonty/vdebug'
 Plugin 'fatih/vim-go'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
