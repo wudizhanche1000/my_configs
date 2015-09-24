@@ -89,4 +89,6 @@ source $ZSH/oh-my-zsh.sh
 autoload -U compinit && compinit -u
 
 
-
+export GOPATH=$HOME/projects/gocode
+export GOROOT=/opt/go
+export PATH=$PATH:$GOPATH/bin/:$GOROOT/bin

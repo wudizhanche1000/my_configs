@@ -33,6 +33,7 @@ Plugin 'klen/python-mode'
 Plugin 'joonty/vdebug'
 Plugin 'fatih/vim-go'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'https://github.com/majutsushi/tagbar.git'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -83,7 +84,8 @@ noremap <Leader>E :qa!<CR>   " Quit all windows
 " easier moving between tabs
 map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
-
+"  Copy to X clipboard
+map <Leader>c :w !xsel -i -b<CR>
 " easier moving of code blocks
 " Try to go into visual mode (v), thenselect several lines of code here and
 " then press ``>`` several times.
@@ -113,3 +115,32 @@ let g:pymode_folding=0
 let g:pymode_breakpoint = 1
 let g:pymode_breakpoint_bind = '<leader>b'
 let g:pymode_indent = 1
+"Configs for gotags
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \ }
+nmap <F8> :TagbarToggle<CR>
